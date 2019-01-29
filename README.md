@@ -1,4 +1,4 @@
-#Step Out
+# Step Out
 
 Street workout application gemaakt door Pieter Thomas, Tijl De Landtsheer & Ruben Deleat
 
