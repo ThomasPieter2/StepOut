@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
+             x:Class="StepOut.View.SetOverviewPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Hartslagzone" Margin="16, 16, 16, 5" TextColor="#3C4459" FontSize="20"/>
+            <Frame HeightRequest="120" BackgroundColor="White" Margin="16, 0, 16, 16" Padding="16" CornerRadius="4">
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout HorizontalOptions="Start">
+                        <Label x:Name="lblMaxZone" VerticalOptions="StartAndExpand" Text="Max"/>
+                        <Label x:Name="lblMinZone" VerticalOptions="EndAndExpand" Text="Min"/>
+                    </StackLayout>
+                    <microcharts:ChartView x:Name="chartView" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </Frame>
+            <Label Text="Hartslag" Margin="16, 10, 16, 5" TextColor="#3C4459" FontSize="20"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Column="0" Margin="16, 0, 4, 16" BackgroundColor="White" HorizontalOptions="FillAndExpand" HeightRequest="60" CornerRadius="4">
+                    <StackLayout>
+                        <Label Text="Min" FontSize="14" TextColor="#3C4459"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                            <Label x:Name="lblMin" Text="--" FontSize="24" HorizontalOptions="StartAndExpand" TextColor="#3C4459"/>
+                            <StackLayout HorizontalOptions="EndAndExpand">
+                                <Label Text="BPM" TextColor="Red" FontSize="10"/>
+                                <Image x:Name="imgHeart" HeightRequest="12" Margin="0, -4, 0, 0" WidthRequest="4"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Column="1" Margin="12, 0, 12, 16" BackgroundColor="White" HorizontalOptions="FillAndExpand" HeightRequest="60" CornerRadius="4">
+                    <StackLayout>
+                        <Label Text="Gem" FontSize="14" TextColor="#3C4459"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                            <Label x:Name="lblAvg" Text="--" FontSize="24" HorizontalOptions="StartAndExpand" TextColor="#3C4459"/>
+                            <StackLayout HorizontalOptions="EndAndExpand">
+                                <Label Text="BPM" TextColor="Red" FontSize="10"/>
+                                <Image x:Name="imgHeart2" HeightRequest="12" Margin="0, -4, 0, 0" WidthRequest="4"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Column="2" Margin="4, 0, 16, 16" BackgroundColor="White" HorizontalOptions="FillAndExpand" HeightRequest="60" CornerRadius="4">
+                    <StackLayout>
+                        <Label Text="Max" FontSize="14" TextColor="#3C4459"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                            <Label x:Name="lblMax" Text="--" FontSize="24" HorizontalOptions="StartAndExpand" TextColor="#3C4459"/>
+                            <StackLayout HorizontalOptions="EndAndExpand">
+                                <Label Text="BPM" TextColor="Red" FontSize="10"/>
+                                <Image x:Name="imgHeart3" HeightRequest="12" Margin="0, -4, 0, 0" WidthRequest="4"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+            <Label Text="Sets" Margin="16, 10, 16, 5" TextColor="#3C4459" FontSize="20"/>
+            <Frame Margin="16, 0, 16, 32" CornerRadius="4" BackgroundColor="White" VerticalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="White">
+                    <Label x:Name="lblDatum" Text="{Binding Datum}" FontAttributes="Bold" TextColor="#3C4459" Grid.Column="0" Margin="0, 0, 0, 8"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Set 1" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                        <Label Text="{Binding Set1}" x:Name="lblSet1" HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Set 2" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                        <Label Text="{Binding Set2}" x:Name="lblSet2" HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Set 3" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                        <Label Text="{Binding Set3}" x:Name="lblSet3" HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StepOut.View.PreviousSets"
+             xmlns:devsdna="clr-namespace:DevsDNA;assembly=DevsDNA.GradientBoxView"
+             BackgroundColor="#FAFAFA">
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <StackLayout Grid.Row="0" VerticalOptions="FillAndExpand" x:Name="actLoading">
+                <ActivityIndicator  IsVisible="True" VerticalOptions="CenterAndExpand" IsRunning="True" Color="#9f9f9f"/>
+            </StackLayout>
+            <Label Text="" Margin="16,16,16,-54" FontSize="16" HeightRequest = "24" IsVisible="False" x:Name="lblNoResults" VerticalOptions="Start"/>
+            <ListView x:Name="lvwSets" IsPullToRefreshEnabled="True" Refreshing="LvwSets_Refreshing" IsRefreshing="{Binding IsBusy, Mode=OneWay}" ItemSelected="LvwSets_ItemSelected" BackgroundColor="#FAFAFA" RowHeight="150" Margin="0, 16, 0, 0" SeparatorVisibility="None" VerticalOptions="Start">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="16, 8, 16, 8" CornerRadius="4" BackgroundColor="White" HeightRequest="200">
+                                <StackLayout BackgroundColor="White">
+                                    <Label Text="{Binding Datum}" TextColor="#3C4459" Grid.Column="0"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Set 1" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding Set1}" x:Name="lblSet1" HorizontalOptions="EndAndExpand"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Set 2" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding Set2}" x:Name="lblSet2" HorizontalOptions="EndAndExpand"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Set 3" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding Set3}" x:Name="lblSet3" HorizontalOptions="EndAndExpand"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

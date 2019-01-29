@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             x:Class="StepOut.View.ResetPasworPage"
+             Title="Wachtwoord opnieuw instellen"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Image x:Name="imgLogo" Source="stepoutlogo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="90" WidthRequest="90"/>
+                <Label FontSize="28" TextColor="#333B50" Text="Step Out" Margin="0, 0, 0, 42" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <xfx:XfxEntry VerticalOptions="Center" Placeholder="Oud wachtwoord" x:Name="entryOldPass"  IsPassword="True" Margin="16, 0, 16, -26"/>
+                <xfx:XfxEntry VerticalOptions="Center" Placeholder="Nieuwe wachtwoord" x:Name="entrynewPass1" IsPassword="True" Keyboard="Email" Margin="16, 0, 16, -26" />
+                <xfx:XfxEntry VerticalOptions="Center" Placeholder="Bevestig nieuwe wachtwoord" x:Name="entrynewPass2" IsPassword="True" Keyboard="Email" Margin="16, 0, 16, -40" />
+                <Label x:Name="lblMelding" Margin="20, 8, 16, 0" TextColor="#a50000 "/>
+            </StackLayout>
+            <Button x:Name="btnResetPassword" FontSize="15" HeightRequest="54" VerticalOptions="End" TextColor="#FFFFFF" BackgroundColor="#3C4459" BorderRadius="4" Text="Verander wachtwoord" Margin="16, 24" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

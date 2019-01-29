@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:pinch="clr-namespace:StepOut"
+             x:Class="StepOut.View.DisplayImagePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Black">
+                <controls:CarouselViewControl x:Name="cvwUitleg" ShowIndicators="True" VerticalOptions="Center">
+                    <controls:CarouselViewControl.ItemTemplate>
+                        <DataTemplate>
+                            <pinch:PinchToZoomContainer>
+                                <pinch:PinchToZoomContainer.Content>
+                                    <Image Aspect="AspectFit" Source="{Binding}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                                </pinch:PinchToZoomContainer.Content>
+                            </pinch:PinchToZoomContainer>
+                        </DataTemplate>
+                    </controls:CarouselViewControl.ItemTemplate>
+                </controls:CarouselViewControl>
+            </ContentView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

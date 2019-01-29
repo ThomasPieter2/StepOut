@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="StepOut.View.ExercisePage"
+             BackgroundColor="#FAFAFA"
+             xmlns:devsdna="clr-namespace:DevsDNA;assembly=DevsDNA.GradientBoxView"
+             xmlns:pinch="clr-namespace:StepOut">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#FAFAFA">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3.5*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="3.5*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0" HeightRequest="240" Margin="16" CornerRadius="4" Padding="0">
+                <Grid BackgroundColor="Gray" x:Name="test">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Grid.RowSpan="2" Aspect="AspectFill" x:Name="imgOef">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="onImageTap"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Frame Grid.Row="1" BackgroundColor="Transparent" Padding="0" Margin="0">
+                        <devsdna:GradientBoxView TopColor="Transparent" BottomColor="#2B2B2B" />
+                    </Frame>
+                    <Frame Grid.Row="1" Padding="0" Margin="0" BackgroundColor="Transparent">
+                        <Label x:Name="lblOef" VerticalOptions="Center" TextColor="White" Text="Test" FontSize="24" Margin="16, 0, 0, 0"/>
+                    </Frame>
+                </Grid>
+            </Frame>
+            <StackLayout Grid.Row="1" Orientation="Horizontal">
+                <Label Text="Uitleg" Margin="16, 10, 16, 10" TextColor="#3C4459" FontSize="20" HorizontalOptions="StartAndExpand"/>
+                <Image x:Name="imgList" HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" Margin="16, 10, 16, 10">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnListTapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            <Frame Grid.Row="2" VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="16, 0" CornerRadius="4">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTapped"/>
+                </Frame.GestureRecognizers>
+                <StackLayout>
+                    <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <controls:CarouselViewControl x:Name="cvwUitleg" ShowIndicators="True" Scrolled="CvwUitleg_Scrolled" VerticalOptions="Center" Margin="16">
+                            <controls:CarouselViewControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Label VerticalOptions="CenterAndExpand" Text="{Binding}" FontSize="18" TextColor="#3C4459" />
+                                </DataTemplate>
+                            </controls:CarouselViewControl.ItemTemplate>
+                        </controls:CarouselViewControl>
+                    </ContentView>
+                </StackLayout>
+            </Frame>
+            <Button Grid.Row="3" x:Name="btnChangeGroup" TextColor="#FFFFFF" BackgroundColor="#3C4459" MinimumHeightRequest="54" VerticalOptions="End" BorderRadius="4" Text="Begin" Margin="10,0, 10, 30" Clicked="BtnChangeGroup_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

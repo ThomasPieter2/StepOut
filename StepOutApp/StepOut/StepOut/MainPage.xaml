@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:StepOut"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             x:Class="StepOut.MainPage"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+
+    <!--<Grid VerticalOptions="FillAndExpand" BackgroundColor="Olive">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0"/>
+        <StackLayout VerticalOptions="Start" Grid.Row="1" BackgroundColor="Red">
+            <Entry Placeholder="Email"/>
+            <Entry Placeholder="Password"/>
+            <Button x:Name="btnLogin" FontSize="15" HeightRequest="54" VerticalOptions="EndAndExpand" TextColor="#FFFFFF" BackgroundColor="#3C4459" BorderRadius="10" Text="Login" Margin="16, 24" Clicked="btnLogin_Clicked"/>
+            <StackLayout Orientation="Horizontal">
+                <BoxView HeightRequest="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="Gray" Margin="16, 0, 16, 0"/>
+                <Label Text="Or" HorizontalOptions="Center" TextColor="Gray"/>
+                <BoxView HeightRequest="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="Gray" Margin="16, 0, 16, 0"/>
+            </StackLayout>
+            <Button x:Name="btnRegistration" BorderWidth="1" BorderColor="#3C4459" FontSize="15" HeightRequest="54" VerticalOptions="EndAndExpand" TextColor="#3C4459" BackgroundColor="#FFFFFF" BorderRadius="10" Text="Registreer" Margin="16, 24" Clicked="btnRegistration_Clicked"/>
+            <WebView Source="www.google.be" x:Name="wbvOauth" HeightRequest="1000" WidthRequest="1000" Navigated="WbvOauth_Navigated" HorizontalOptions="End" VerticalOptions="Fill"/>
+        </StackLayout>
+        <StackLayout Grid.Row="2" BackgroundColor="Chocolate"/>
+    </Grid>-->
+
+    <StackLayout BackgroundColor="White">
+        <StackLayout VerticalOptions="FillAndExpand"/>
+        <StackLayout x:Name="contentLogin" VerticalOptions="Center" BackgroundColor="White" Margin="0">
+            <Image x:Name="imgLogo" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="90" WidthRequest="90"/>
+            <Label FontSize="28" TextColor="#333B50" Text="Step Out" Margin="0, 0, 0, 42" HorizontalOptions="Center"/>
+            <xfx:XfxEntry Placeholder="Email" x:Name="entryName" Margin="16, 0, 16, -26"/>
+            <xfx:XfxEntry Placeholder="Password" x:Name="entryPass" IsPassword="True" Keyboard="Email" Margin="16, 0, 16, -40" />
+            <Label x:Name="lblMelding" Margin="20, 8, 16, 0" TextColor="#a50000 "/>
+            <Button x:Name="btnLogin" FontSize="15" HeightRequest="54" VerticalOptions="EndAndExpand" TextColor="#FFFFFF" BackgroundColor="#3C4459" BorderRadius="4" Text="Login" Margin="16, 24, 16, 8" Clicked="btnLogin_Clicked"/>
+
+            <Label x:Name="lblWwVergeten" FontSize="13" TextColor="#AAAAAA" Text="Wachtwoord vergeten?" Margin="0, 0, 0, 24" HorizontalOptions="Center"/>
+
+
+            <StackLayout Orientation="Horizontal">
+                <BoxView HeightRequest="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="Gray" Margin="16, 0, 16, 0"/>
+                <Label Text="Or" HorizontalOptions="Center" TextColor="Gray"/>
+                <BoxView HeightRequest="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="Gray" Margin="16, 0, 16, 0"/>
+            </StackLayout>
+            <Button x:Name="btnRegistration" BorderWidth="1" BorderColor="#3C4459" FontSize="15" HeightRequest="54" VerticalOptions="EndAndExpand" TextColor="#3C4459" BackgroundColor="#FFFFFF" BorderRadius="4" Text="Registreer" Margin="16, 24" Clicked="btnRegistration_Clicked"/>
+        </StackLayout>
+        <StackLayout VerticalOptions="FillAndExpand"/>
+    </StackLayout>
+</ContentPage>

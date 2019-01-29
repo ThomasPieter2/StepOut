@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StepOut.View.MuscleGroupView"
+             NavigationPage.HasNavigationBar="True"
+             BackgroundColor="#FAFAFA"
+             xmlns:devsdna="clr-namespace:DevsDNA;assembly=DevsDNA.GradientBoxView"
+>
+  <ContentPage.Content>
+
+        <StackLayout>
+            <Frame HeightRequest="240" Margin="16" CornerRadius="4" Padding="0">
+                <Grid BackgroundColor="White" x:Name="test">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Grid.RowSpan="2" Aspect="AspectFit" x:Name="imgMain"/>
+
+                    <Frame Grid.Row="1" BackgroundColor="Transparent" Padding="0" Margin="0">
+                    </Frame>
+                    <Frame Grid.Row="1" Padding="0" Margin="0" BackgroundColor="Transparent">
+                        <Label x:Name="lblSpiergroep" VerticalOptions="Center" TextColor="Black" Text="Test" FontSize="24" Margin="16, 0, 0, 0"/>
+                    </Frame>
+                </Grid>
+            </Frame>
+            <Label Text="Niveau" Margin="16, 10, 16, 10" TextColor="#3C4459" FontSize="20"></Label>
+            <Frame Margin="16, 5" CornerRadius="4" BackgroundColor="#FFFFFF">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Easy" TextColor="#3C4459" Grid.Column="0"/>
+                    <Label x:Name="lblEasyRecomended" Text="(Recommended)" TextColor="#3C4459" Grid.Column="0"/>
+                    <!--<BoxView BackgroundColor="Gray" Grid.Column="1" WidthRequest="20" HeightRequest="20" HorizontalOptions="EndAndExpand"/>-->
+                    <Image x:Name="imgplay"  Grid.Column="1" WidthRequest="20" HeightRequest="20" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEasyTapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame Margin="16, 5" CornerRadius="4" BackgroundColor="#FFFFFF">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Basic" TextColor="#3C4459" Grid.Column="0"/>
+                    <Label x:Name="lblBasicRecomended" Text="(Recommended)" TextColor="#3C4459" Grid.Column="0"/>
+                    <!--<BoxView BackgroundColor="Gray" Grid.Column="1" WidthRequest="20" HeightRequest="20" HorizontalOptions="EndAndExpand"/>-->
+                    <Image x:Name="imgplay2"  Grid.Column="1" WidthRequest="20" HeightRequest="20" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBasicTapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame Margin="16, 5" CornerRadius="4" BackgroundColor="#FFFFFF">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Heavy" TextColor="#3C4459" Grid.Column="0"/>
+                    <Label x:Name="lblHeavyRecomended" Text="(Recommended)" TextColor="#3C4459" Grid.Column="0"/>
+                    <!--<BoxView BackgroundColor="Gray" Grid.Column="1" WidthRequest="20" HeightRequest="20" HorizontalOptions="EndAndExpand"/>-->
+                    <Image x:Name="imgplay3"  Grid.Column="1" WidthRequest="20" HeightRequest="20" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnHeavyTapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Button x:Name="btnChangeGroup" FontSize="15" HeightRequest="54" VerticalOptions="EndAndExpand" TextColor="#FFFFFF" BackgroundColor="#3C4459" BorderRadius="4" Text="Andere Spiergroep" Margin="16, 24" Clicked="BtnChangeGroup_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

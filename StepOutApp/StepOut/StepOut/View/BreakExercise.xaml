@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:devsdna="clr-namespace:DevsDNA;assembly=DevsDNA.GradientBoxView"
+             xmlns:ef="clr-namespace:AiForms.Effects;assembly=AiForms.Effects"
+             x:Class="StepOut.View.BreakExercise">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#FAFAFA">
+            <Frame HeightRequest="240" Margin="16" CornerRadius="4" Padding="0">
+                <Grid BackgroundColor="Gray" x:Name="test">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Grid.RowSpan="2" Aspect="AspectFill" x:Name="imgEx"/>
+                    <Frame Grid.Row="1" BackgroundColor="Transparent" Padding="0" Margin="0">
+                        <devsdna:GradientBoxView TopColor="Transparent" BottomColor="#2B2B2B" />
+                    </Frame>
+                    <Frame Grid.Row="1" Padding="0" Margin="0" BackgroundColor="Transparent">
+                        <Label x:Name="lblOef" VerticalOptions="Center" TextColor="White" Text="Test" FontSize="24" Margin="16, 0, 0, 0"/>
+                    </Frame>
+                </Grid>
+            </Frame>
+            <Frame Margin="16, 0, 16, 0" CornerRadius="4">
+                <StackLayout Orientation="Horizontal" Padding="0">
+                    <Label Text="Behaalde aantal herhalingen" FontSize="16" TextColor="#3C4459" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                    <Entry x:Name="entryReps" HorizontalTextAlignment="Center" Margin="0, -10" Keyboard="Numeric" WidthRequest="40" Placeholder="15"></Entry>
+                </StackLayout>
+            </Frame>
+            <Label Text="Resterende Tijd" Margin="16, 10, 16, 0" TextColor="#3C4459" FontSize="20"/>
+            <Frame VerticalOptions="FillAndExpand" BackgroundColor="White" Margin="16, 0" CornerRadius="4">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Margin="16, 0, 0, 0">
+                    <Frame HorizontalOptions="Center" WidthRequest="25" HeightRequest="25" Margin="5, 0, 5, 0" BackgroundColor="#3C4459" CornerRadius="16">
+                        <Label x:Name="lblMinutes" VerticalOptions="Center" HorizontalOptions="Center" FontSize="22" Text="01" TextColor="White"/>
+                    </Frame>
+                    <Label Text=":" FontSize="18" TextColor="#3C4459" VerticalOptions="Center"/>
+                    <Frame HorizontalOptions="Center" WidthRequest="25" HeightRequest="25" Margin="5, 0, 5, 0" BackgroundColor="#3C4459" CornerRadius="16">
+                        <Label x:Name="lblSeconds" VerticalOptions="Center" HorizontalOptions="Center" FontSize="22" Text="00" TextColor="White"/>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+            <Button x:Name="btnChangeGroup" Text="Pauze overslaan" TextColor="#FFFFFF" BackgroundColor="#3C4459" HeightRequest="54" VerticalOptions="End" BorderRadius="4" Margin="10, 16, 10, 30" Clicked="BtnChangeGroup_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

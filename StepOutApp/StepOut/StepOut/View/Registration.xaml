@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dm="clr-namespace:dotMorten.Xamarin.Forms;assembly=dotMorten.Xamarin.Forms.AutoSuggestBox"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             x:Class="StepOut.View.Registration"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="contentLogin" VerticalOptions="Center" BackgroundColor="White" Margin="0, 100, 0, 0">
+                <Image x:Name="imgLogo" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="90" WidthRequest="90"/>
+                <Label FontSize="28" TextColor="#333B50" Text="Step Out" Margin="0, 0, 0, 42" HorizontalOptions="Center"/>
+                <xfx:XfxEntry Placeholder="Name" x:Name="entryName" Margin="16, 0, 16, -26" />
+                <xfx:XfxEntry Placeholder="Email" x:Name="entryEmail" Keyboard="Email" Margin="16, 0, 16, -26" />
+                <xfx:XfxEntry Placeholder="Password" x:Name="entryPass" IsPassword="True" Margin="16, 0, 16, -26" />
+                <xfx:XfxComboBox Placeholder="Land" x:Name="entryLand" Margin="16, 0, 16, -32" TextChanged="EntryLand_TextChanged"/>
+                <Label x:Name="lblMelding" Margin="20, 8, 16, 0" TextColor="#a50000 "/>
+                <Button x:Name="btnLogin" FontSize="15" HeightRequest="54" VerticalOptions="EndAndExpand" TextColor="#FFFFFF" BackgroundColor="#3C4459" BorderRadius="4" Text="Registreer" Margin="16, 24, 16, 8" Clicked="btnRegister_Clicked"/>
+                <Label FontSize="13" TextColor="#AAAAAA" Text="Log in als je al een account hebt" Margin="0, 0, 0, 24" HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLoginTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

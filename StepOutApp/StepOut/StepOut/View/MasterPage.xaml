@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StepOut.View.MasterPage"
+             xmlns:view="clr-namespace:StepOut.View"
+             NavigationPage.HasNavigationBar="False">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master" BackgroundColor="White">
+            <ContentPage.Content>
+                <StackLayout>
+                    <Grid BackgroundColor="#3C4459">
+                        <Grid Margin="24, 64, 10, 64" HorizontalOptions="Start" VerticalOptions="Start">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="4*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Frame x:Name="imgProfilePicture" Grid.Column="0" BackgroundColor="Gray" VerticalOptions="Center" CornerRadius="50" Padding="0" HeightRequest="60" WidthRequest="60">
+                                <Image x:Name="imgPlaceholder"></Image>
+                            </Frame>
+                            <StackLayout Grid.Column="1" Margin="16, 0, 0, 0">
+                                <Label x:Name="lblEmail" FontSize="18" Text="John Doe" TextColor="#FFFFFF" VerticalOptions="CenterAndExpand" />
+                                <Label x:Name="lblCountry" FontSize="16" Text="België" TextColor="#DFE2EB" VerticalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                        </Grid>
+                    </Grid>
+                    <Grid Margin="10, 40, 10, 10" HorizontalOptions="Start" VerticalOptions="StartAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="btnRandom" Height="50"/>
+                            <RowDefinition x:Name="btnExercises" Height="50"/>
+                            <RowDefinition x:Name="btnBluethoot" Height="50"/>
+                            <RowDefinition x:Name="btnProfile" Height="50"/>
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row="0" Orientation="Horizontal">
+                            <Image WidthRequest="24" HeightRequest="24" VerticalOptions="Center" x:Name="imgShuffle" Margin="8, 0, 8, 0"/>
+                            <Label x:Name="lblRandom" FontSize="18" Text="Random" TextColor="#3C4459" VerticalOptions="CenterAndExpand" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnRandomTapped"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="1">
+                            <Image WidthRequest="24" HeightRequest="24" VerticalOptions="Center" x:Name="imgMuscle" Margin="8, 0, 8, 0"/>
+                            <Label x:Name="lblExercise" FontSize="18" Text="Oefeningen" TextColor="#3C4459" VerticalOptions="CenterAndExpand"/>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnExercisesTapped"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="2">
+                            <Image WidthRequest="24" HeightRequest="24" VerticalOptions="Center" x:Name="imgProfile" Margin="8, 0, 8, 0"/>
+                            <Label x:Name="lblProfile" FontSize="18" Text="Profiel" TextColor="#3C4459" VerticalOptions="CenterAndExpand"/>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnProfileTapped"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="3">
+                            <Image WidthRequest="24" VerticalOptions="Center" HeightRequest="24" x:Name="imgBluethooth" Margin="8, 0, 8, 0"/>
+                            <Label x:Name="lblBluethooth" FontSize="18" Text="Connect device" TextColor="#3C4459" VerticalOptions="CenterAndExpand"/>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnBluethoothTap"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Margin="10, 10, 10, 36" HorizontalOptions="Start" VerticalOptions="End">
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="btnSignOut" Height="50"/>
+                            <RowDefinition  Height="50"/>
+                        </Grid.RowDefinitions>
+                        <!--<StackLayout Orientation="Horizontal" Grid.Row="0">
+                            <Image WidthRequest="24" HeightRequest="24" x:Name="imgPasswordReset" Margin="8, 0, 8, 16"/>
+                            <Label x:Name="lblResetPassword" FontSize="18" Text="Passwoord wijzigen" Margin="0, 0, 0, 16" TextColor="#3C4459" VerticalOptions="CenterAndExpand"/>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>-->
+                        <StackLayout Orientation="Horizontal" Grid.Row="1">
+                            <Image WidthRequest="24" HeightRequest="24" x:Name="imgSignout" Margin="8, 0, 8, 16"/>
+                            <Label x:Name="lblSignOut" FontSize="18" Text="Uitloggen" Margin="0, 0, 0, 16" TextColor="#3C4459" VerticalOptions="CenterAndExpand"/>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnSignOutTapped"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage BarBackgroundColor="#3C4459" BarTextColor="#FFFFFF" Tint="Black">
+            <x:Arguments>
+                <view:DetailPage x:Name="detailPage"/>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

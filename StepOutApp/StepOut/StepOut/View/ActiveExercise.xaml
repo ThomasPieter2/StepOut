@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StepOut.View.ActiveExercise"
+             xmlns:devsdna="clr-namespace:DevsDNA;assembly=DevsDNA.GradientBoxView"
+             BackgroundColor="#FAFAFA">
+  <ContentPage.Content>
+        <StackLayout>
+            <Frame HeightRequest="240" Margin="16" CornerRadius="4" Padding="0">
+                <Grid BackgroundColor="Gray" x:Name="test">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Grid.RowSpan="2" Aspect="AspectFill" x:Name="imgEx"/>
+                    <Frame Grid.Row="1" BackgroundColor="Transparent" Padding="0" Margin="0">
+                        <devsdna:GradientBoxView TopColor="Transparent" BottomColor="#2B2B2B" />
+                    </Frame>
+                    <Frame Grid.Row="1" Padding="0" Margin="0" BackgroundColor="Transparent">
+                        <Label x:Name="lblOef" VerticalOptions="Center" TextColor="White" Text="Test" FontSize="24" Margin="16, 0, 0, 0"/>
+                    </Frame>
+                </Grid>
+            </Frame>
+            <Frame Margin="16, 0, 16, 0" CornerRadius="4">
+                <StackLayout Orientation="Horizontal" Padding="0">
+                    <Label Text="Doelstelling aantal herhalingen" FontSize="16" TextColor="#3C4459" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                    <Label Text="15" Grid.Column="1" HorizontalOptions="EndAndExpand" FontSize="16" TextColor="#3C4459"  x:Name="lblRepetities"/>
+                </StackLayout>
+            </Frame>
+            <Label Text="Hartslag" Margin="16, 10, 16, 10" TextColor="#3C4459" FontSize="20"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Column="0" Margin="16, 0, 8, 0" BackgroundColor="White" HorizontalOptions="FillAndExpand" HeightRequest="100" CornerRadius="4">
+                    <StackLayout>
+                        <Label Text="Huidig" FontSize="16" TextColor="#3C4459"/>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                            <Label x:Name="lblHuidig" FontSize="36" Text="--" HorizontalOptions="StartAndExpand" TextColor="#3C4459" Margin="0, 0, 8, 0"/>
+                            <StackLayout HorizontalOptions="StartAndExpand" Margin="8, 0, 0, 0">
+                                <Label Text="BPM" TextColor="Red" FontSize="15"/>
+                                <Image x:Name="imgHeart" HeightRequest="20" Margin="0, -4, 0, 0" WidthRequest="15"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Column="1" Margin="8, 0, 16, 0" BackgroundColor="White" HorizontalOptions="FillAndExpand" HeightRequest="100" CornerRadius="4">
+                    <StackLayout>
+                        <Label Text="Gemiddeld" FontSize="16" TextColor="#3C4459"/>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                            <Label x:Name="lblGemiddeld" FontSize="36" Text="--" HorizontalOptions="StartAndExpand" Margin="0, 0, 8, 0" TextColor="#3C4459"/>
+                            <StackLayout HorizontalOptions="StartAndExpand" Margin="8, 0, 0, 0">
+                                <Label Text="BPM" TextColor="Red" FontSize="15"/>
+                                <Image x:Name="imgHeart2" HeightRequest="20" Margin="0, -4, 0, 0" WidthRequest="15"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+            <Button x:Name="btnKlaar" TextColor="#FFFFFF" BackgroundColor="#3C4459" HeightRequest="54" VerticalOptions="EndAndExpand" BorderRadius="4" Text="Klaar" Margin="10,10, 10, 30" Clicked="BtnKlaar_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
